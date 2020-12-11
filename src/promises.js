@@ -45,6 +45,10 @@ const promiseStateQuestion = () => {
   return answer;
 };
 
+// TODO: example of a "broken promise which students need to fix"
+// maybe a console.log in the "wrong place" like outside the .then block
+
+// TODO: might need to refactor this to be able to write relavnt tests
 const ingredients = ["banana", "strawberry", "milk", "ice"];
 
 const makeSmoothie = new Promise((resolve, reject) => {
@@ -55,14 +59,18 @@ const makeSmoothie = new Promise((resolve, reject) => {
   }
 });
 
+//TODO: Write a function, smoothieResult, which returns the fulfilled makeSmoothie promise.
 const smoothieResult = () => {
-  return;
-  makeSmoothie
+  return makeSmoothie
     .then((message) => console.log(`SUCCESS: ${message}`))
     .catch((error) =>
       console.log(`An error occured while preparing the smoothie: ${error}`)
     );
 };
+
+// TODO: create another instance where the student needs to write a promise
+
+// TODO: create an example where the student needs to chain promises
 
 // DO NOT edit the code below, since these functions are being exported and used in the promsies.test.js file
 module.exports = {
