@@ -1,6 +1,7 @@
 const {
   tellEveryoneQuestion,
   promiseStateQuestion,
+  smoothieResult,
 } = require("../src/promises");
 
 describe("tellEveryoneQuestion", () => {

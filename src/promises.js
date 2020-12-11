@@ -1,4 +1,4 @@
-var arePromsisesAwesome = true;
+const arePromsisesAwesome = true;
 
 const willLearnPromises = new Promise((resolve, reject) => {
   if (arePromsisesAwesome) {
@@ -45,8 +45,28 @@ const promiseStateQuestion = () => {
   return answer;
 };
 
+const ingredients = ["banana", "strawberry", "milk", "ice"];
+
+const makeSmoothie = new Promise((resolve, reject) => {
+  if (ingredients.length >= 2) {
+    resolve("Mmmm smoothie");
+  } else {
+    reject("We need some more ingredients to make a smoothie");
+  }
+});
+
+const smoothieResult = () => {
+  return;
+  makeSmoothie
+    .then((message) => console.log(`SUCCESS: ${message}`))
+    .catch((error) =>
+      console.log(`An error occured while preparing the smoothie: ${error}`)
+    );
+};
+
 // DO NOT edit the code below, since these functions are being exported and used in the promsies.test.js file
 module.exports = {
   tellEveryoneQuestion,
   promiseStateQuestion,
+  smoothieResult,
 };
