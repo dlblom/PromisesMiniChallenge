@@ -45,30 +45,29 @@ const promiseStateQuestion = () => {
   return answer;
 };
 
-// TODO: example of a "broken promise which students need to fix"
-// maybe a console.log in the "wrong place" like outside the .then block
-
-// TODO: might need to refactor this to be able to write relavnt tests
-const ingredients = ["banana", "strawberry", "milk", "ice"];
-
-const makeSmoothie = new Promise((resolve, reject) => {
-  if (ingredients.length >= 2) {
-    resolve("Mmmm smoothie");
-  } else {
-    reject("We need some more ingredients to make a smoothie");
-  }
+// Using promise chaining, multiply the result of the randomNumber promise by 2, then 3, then 4. Put console.log statements in the then blocks to see how the result changes.
+let asyncNumber = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(5);
+  }, 3 * 1000);
 });
 
-//TODO: Write a function, smoothieResult, which returns the fulfilled makeSmoothie promise.
-const smoothieResult = () => {
-  return makeSmoothie
-    .then((message) => console.log(`SUCCESS: ${message}`))
-    .catch((error) =>
-      console.log(`An error occured while preparing the smoothie: ${error}`)
-    );
+// Walkthrough: The initial promise resolves to 5 in 3 seconds, the .then() function is called, the value that it returns is passed to the next .then() and so on. Note: .then() always returns a promise
+const multiplyRandomNumber = () => {
+  return asyncNumber
+    .then((result) => {
+      console.log(result);
+      return result * 2;
+    })
+    .then((result) => {
+      console.log(result);
+      return result * 3;
+    })
+    .then((result) => {
+      console.log(result);
+      return result * 4;
+    });
 };
-
-// TODO: create another instance where the student needs to write a promise
 
 // TODO: create an example where the student needs to chain promises
 
@@ -76,5 +75,5 @@ const smoothieResult = () => {
 module.exports = {
   tellEveryoneQuestion,
   promiseStateQuestion,
-  smoothieResult,
+  multiplyRandomNumber,
 };
