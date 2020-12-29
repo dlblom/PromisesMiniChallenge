@@ -14,13 +14,13 @@ A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Glo
 
 ## Requirements
 
-| TASK           | DESCRIPTION                                                                                                                                                   |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| INTERPRETATION | Interpret the existing code (willLearnPromises, showOff & tellEveryone), to determine the print order of the console.log statements in the tellEveryone func. |
-| KNOWLEDGE      | Fill in the variable in the promiseStateQuestion function with the 3 states of promises                                                                       |
-| CODE           | Practice promise syntax                                                                                                                                       |
-| CODE           | Practice promise syntax                                                                                                                                       |
-| CHAINING       | Practice promise chaining                                                                                                                                     |
+| TASK           | DESCRIPTION                                                                                                                                                                             |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| INTERPRETATION | Interpret the existing code (willLearnPromises, showOff & tellEveryone), to determine the print order of the console.log statements in the tellEveryone func.                           |
+| KNOWLEDGE      | Fill in the variable in the promiseStateQuestion function with the 3 states of promises                                                                                                 |
+| CODE           | Create a new Promise assigned to the sayHello variable which resolves to 'Hello!' if the goodMood variable is true and rejects to `Error saying Hello if the goodMood variable is false |
+| CODE           | Practice promise syntax                                                                                                                                                                 |
+| CHAINING       | Practice promise chaining                                                                                                                                                               |
 
 ### Installation
 

@@ -1,7 +1,7 @@
 const {
   tellEveryoneQuestion,
   promiseStateQuestion,
-  smoothieResult,
+  sayHello,
 } = require("../src/promises");
 
 describe("tellEveryoneQuestion", () => {
@@ -20,5 +20,18 @@ describe("promiseStateQuestion", () => {
     expect(promiseStateQuestion()).toContain("FULFILED");
     expect(promiseStateQuestion()).toContain("REJECTED");
     expect(promiseStateQuestion()).toHaveLength(3);
+  });
+});
+
+describe("sayHello", () => {
+  it("should resolve to `Hello!`", () => {
+    return sayHello.then((result) => {
+      expect(result).toEqual(`Hello!`);
+    });
+  });
+  it("should reject to `Error saying Hello`", () => {
+    return sayHello.catch((error) => {
+      expect(error).toEqual(`Error saying Hello`);
+    });
   });
 });
