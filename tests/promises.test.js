@@ -37,15 +37,15 @@ describe("rememberName", () => {
   });
 });
 
-// describe("sayHello", () => {
-//   it("should resolve to `Hello!`", async () => {
-//     await sayHello.then((result) => {
-//       expect(result).toEqual(`Hello!`);
-//     });
-//   });
-//   it("should reject to `Error saying Hello`", async () => {
-//     await sayHello.catch((error) => {
-//       expect(error).toEqual(`Error saying Hello`);
-//     });
-//   });
-// });
+describe("sayHello", () => {
+  it("should resolve to `Hello...name` based on name passed in as an argument", async () => {
+    await sayHello(`Bob`).then((result) => {
+      expect(result).toEqual(`Hello...Bob!`);
+    });
+  });
+  it("should reject to `Error saying Hello`", async () => {
+    await sayHello(`Bob`).catch((error) => {
+      expect(error).toEqual(`Error saying Hello`);
+    });
+  });
+});
