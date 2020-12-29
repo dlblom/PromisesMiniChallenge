@@ -40,7 +40,7 @@ const tellEveryoneQuestion = () => {
   return answer;
 };
 
-// TODO QUESTION: What are the three states of promsies? In the promiseStateQuestion function below, fill in your answers as strings of capital letters in the answer array
+// TODO QUESTION: What are the three states of promsies? In the promiseStateQuestion function below, fill in your answers as strings of capital letters in the answer array.
 const promiseStateQuestion = () => {
   let answer = ["PENDING", "FULFILED", "REJECTED"];
   return answer;

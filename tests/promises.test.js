@@ -24,13 +24,13 @@ describe("promiseStateQuestion", () => {
 });
 
 describe("sayHello", () => {
-  it("should resolve to `Hello!`", () => {
-    return sayHello.then((result) => {
+  it("should resolve to `Hello!`", async () => {
+    await sayHello.then((result) => {
       expect(result).toEqual(`Hello!`);
     });
   });
-  it("should reject to `Error saying Hello`", () => {
-    return sayHello.catch((error) => {
+  it("should reject to `Error saying Hello`", async () => {
+    await sayHello.catch((error) => {
       expect(error).toEqual(`Error saying Hello`);
     });
   });
