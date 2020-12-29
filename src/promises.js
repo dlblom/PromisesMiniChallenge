@@ -46,13 +46,13 @@ const promiseStateQuestion = () => {
   return answer;
 };
 
-// TODO: Complete the function, rememberName, which returns a new Promise that will resolve with a name after 2 seconds or reject with `Error remembering name` if no name is provided
+// TODO: Complete the function, rememberName, which returns a new Promise that will resolve with a name after 1 second or reject with `Error remembering name` if no name is provided
 const rememberName = (name) => {
   return new Promise((resolve, reject) => {
     if (name) {
       setTimeout(() => {
         return resolve(name);
-      }, 2000);
+      }, 1000);
     } else {
       reject(`Error remembering name`);
     }
@@ -71,7 +71,7 @@ const sayHello = (name) => {
   });
 };
 
-// TODO: Complete the delayedGreeting function which accepts a name (as a string), and uses promise chaining to combine the results of the rememberName and sayHello functions. Don't forget to handle errors!
+// TODO: Complete the delayedGreeting function which accepts a name (as a string), and uses promise chaining to combine the results of the rememberName and sayHello functions to form a Hello...name! greeting. Don't forget to handle the errors!
 const delayedGreeting = (name) => {
   return rememberName(name)
     .then((data) => {
@@ -90,4 +90,5 @@ module.exports = {
   promiseStateQuestion,
   rememberName,
   sayHello,
+  delayedGreeting,
 };

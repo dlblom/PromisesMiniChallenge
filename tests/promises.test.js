@@ -3,6 +3,7 @@ const {
   promiseStateQuestion,
   rememberName,
   sayHello,
+  delayedGreeting,
 } = require("../src/promises");
 
 describe("tellEveryoneQuestion", () => {
@@ -40,6 +41,19 @@ describe("rememberName", () => {
 describe("sayHello", () => {
   it("should resolve to `Hello...name` based on name passed in as an argument", async () => {
     await sayHello(`Bob`).then((result) => {
+      expect(result).toEqual(`Hello...Bob!`);
+    });
+  });
+  it("should reject to `Error saying Hello`", async () => {
+    await sayHello(`Bob`).catch((error) => {
+      expect(error).toEqual(`Error saying Hello`);
+    });
+  });
+});
+
+describe("delayedGreeting", () => {
+  it("should resolve to Hello...name based on the name passed in as an argument", async () => {
+    await delayedGreeting(`Bob`).then((result) => {
       expect(result).toEqual(`Hello...Bob!`);
     });
   });
