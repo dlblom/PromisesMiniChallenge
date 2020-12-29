@@ -2,6 +2,21 @@
 
 Learn promises by interpreting existing code, and writing your own promises. The goal is to make all the tests pass!
 
+## PENDING CONTENT TO BE CREATED FOR THIS REPO
+
+1. Promise chaining example
+2. ADVANCED PROMISES/ BATCH PROMISE METHODS SET
+
+- batch promise methods (.all .allSettled .any .race)
+- range of different promise objects built out, and then different combinations of them in arrays --> goal is to establish which of the batch methods need to be used on each array to get the target output
+
+3. REAL WORLD FRONT END EXAMPLE USING FETCH/AXIOS
+
+- would need a react file
+- free/no auth APIS: star wars api, free cat-facts api
+
+4. ASYNC AWAIT FILE
+
 ## Promises Introduction
 
 Per MDN, a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises">Promise</a> is an object representing the eventual completion or failure of an asynchronous operation. A promise is a returned object which callbacks are attached to instead of passing callbacks into a function.

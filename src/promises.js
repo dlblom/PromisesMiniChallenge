@@ -64,7 +64,7 @@ const sayHello = (name) => {
   let rememberName = true;
   return new Promise((resolve, reject) => {
     if (rememberName) {
-      resolve(`Hello...${name}`);
+      resolve(`Hello...${name}!`);
     } else {
       reject(`Error saying Hello`);
     }
@@ -84,21 +84,10 @@ const delayedGreeting = (name) => {
     .catch((err) => console.err(err));
 };
 
-// TODO: Promise chaining
-
-// **********************************
-// PENDING CONTENT TO BE CREATED FOR THIS REPO
-
-// 1. ADVANCED PROMISES/ BATCH PROMISE METHODS SET
-//batch promise methods (.all .allSettled .any .race)
-// range of different promise objects built out, and then different combinations of them in arrays --> goal is to establish which of the batch methods need to be used on each array to get the target output
-
-// 2. ASYNC AWAIT FILE
-// *********************************
-
 // DO NOT edit the code below, since these functions are being exported and used in the promsies.test.js file
 module.exports = {
   tellEveryoneQuestion,
   promiseStateQuestion,
+  rememberName,
   sayHello,
 };

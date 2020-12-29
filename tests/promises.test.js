@@ -1,6 +1,7 @@
 const {
   tellEveryoneQuestion,
   promiseStateQuestion,
+  rememberName,
   sayHello,
 } = require("../src/promises");
 
@@ -23,15 +24,28 @@ describe("promiseStateQuestion", () => {
   });
 });
 
-describe("sayHello", () => {
-  it("should resolve to `Hello!`", async () => {
-    await sayHello.then((result) => {
-      expect(result).toEqual(`Hello!`);
+describe("rememberName", () => {
+  it("should resolve to the name passed in as an argument", async () => {
+    await rememberName(`Bob`).then((result) => {
+      expect(result).toEqual(`Bob`);
     });
   });
-  it("should reject to `Error saying Hello`", async () => {
-    await sayHello.catch((error) => {
-      expect(error).toEqual(`Error saying Hello`);
+  it("should reject to `Error remembering name` if no name is passed in", async () => {
+    await rememberName().catch((error) => {
+      expect(error).toEqual(`Error remembering name`);
     });
   });
 });
+
+// describe("sayHello", () => {
+//   it("should resolve to `Hello!`", async () => {
+//     await sayHello.then((result) => {
+//       expect(result).toEqual(`Hello!`);
+//     });
+//   });
+//   it("should reject to `Error saying Hello`", async () => {
+//     await sayHello.catch((error) => {
+//       expect(error).toEqual(`Error saying Hello`);
+//     });
+//   });
+// });
