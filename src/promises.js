@@ -46,23 +46,55 @@ const promiseStateQuestion = () => {
   return answer;
 };
 
-// TODO: Create a new Promise that will resolve with the string `Hello` if the variable goodMood is true, and rejects with the string "Error saying Hello" if goodMood is false
-const sayHello = new Promise((resolve, reject) => {
-  let goodMood = true;
-  if (goodMood) {
-    resolve(`Hello!`);
-  } else {
-    reject(`Error saying Hello`);
-  }
-});
-
-// TODO:
-const getCatFacts = () => {
-  fetch(`https://cat-fact.herokuapp.com/facts`)
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((err) => console.log(`Error getting cat facts from cat-facts API`));
+// TODO: Complete the function, rememberName, which returns a new Promise that will resolve with a name after 2 seconds or reject with `Error remembering name` if no name is provided
+const rememberName = (name) => {
+  return new Promise((resolve, reject) => {
+    if (name) {
+      setTimeout(() => {
+        return resolve(name);
+      }, 2000);
+    } else {
+      reject(`Error remembering name`);
+    }
+  });
 };
+
+// TODO: Complete the function, sayHello, which returns a new Promise that will resolve to `Hello...name` (where name is string passed into the sayHello function) if the rememberName variable is true or rejects with `Error saying Hello` if rememberName is false.
+const sayHello = (name) => {
+  let rememberName = true;
+  return new Promise((resolve, reject) => {
+    if (rememberName) {
+      resolve(`Hello...${name}`);
+    } else {
+      reject(`Error saying Hello`);
+    }
+  });
+};
+
+// TODO: Complete the delayedGreeting function which accepts a name (as a string), and uses promise chaining to combine the results of the rememberName and sayHello functions. Don't forget to handle errors!
+const delayedGreeting = (name) => {
+  return rememberName(name)
+    .then((data) => {
+      return sayHello(data);
+    })
+    .then((data) => {
+      console.log(data);
+      return data;
+    })
+    .catch((err) => console.err(err));
+};
+
+// TODO: Promise chaining
+
+// **********************************
+// PENDING CONTENT TO BE CREATED FOR THIS REPO
+
+// 1. ADVANCED PROMISES/ BATCH PROMISE METHODS SET
+//batch promise methods (.all .allSettled .any .race)
+// range of different promise objects built out, and then different combinations of them in arrays --> goal is to establish which of the batch methods need to be used on each array to get the target output
+
+// 2. ASYNC AWAIT FILE
+// *********************************
 
 // DO NOT edit the code below, since these functions are being exported and used in the promsies.test.js file
 module.exports = {
