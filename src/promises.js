@@ -71,7 +71,7 @@ const keepAddingByTwo = (n) => {
       console.log(data);
       return data;
     })
-    .catch((err) => console.err(err));
+    .catch((err) => console.error(err));
 };
 
 // TODO: Complete the function, rememberName, which returns a new Promise that will resolve with a name after 1 second or reject with `Error remembering name` if no name is provided
@@ -87,11 +87,10 @@ const rememberName = (name) => {
   });
 };
 
-// TODO: Complete the function, sayHello, which returns a new Promise that will resolve to `Hello...name` (where name is string passed into the sayHello function) if the rememberName variable is true or rejects with `Error saying Hello` if rememberName is false.
+// TODO: Complete the function, sayHello, which returns a new Promise that will resolve to `Hello...name` (where name is string passed into the sayHello function) if a name is passed in or rejects with `Error saying Hello` if a name is not passed in.
 const sayHello = (name) => {
-  let rememberName = true;
   return new Promise((resolve, reject) => {
-    if (rememberName) {
+    if (name) {
       resolve(`Hello...${name}!`);
     } else {
       reject(`Error saying Hello`);
@@ -109,14 +108,53 @@ const delayedGreeting = (name) => {
       console.log(data);
       return data;
     })
-    .catch((err) => console.err(err));
+    .catch((err) => console.error(err));
+};
+
+// TODO QUESTION: Fill in the blank to the follwing statement as a string of capital letters in the answer variable of the promiseAllQuestion function below: The Promise.all() method can be useful when waiting for several Promises to resolve in _ _ _ _ _ _ _ _.
+const promiseAllQuestion = () => {
+  let answer = "PARALLEL";
+  return answer;
+};
+
+// TODO: Determine how the Promise.all() method could be used to obtain the results of promiseOne, promiseTwo and promiseThree at the same time in order to complete the addPromiseResults function below
+const promiseOne = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(1);
+  }, 1 * 1000);
+});
+const promiseTwo = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(2);
+  }, 2 * 1000);
+});
+
+const promiseThree = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(3);
+  }, 3 * 1000);
+});
+
+// TODO: Complete the addPromiseResults function so that it returns the result of adding promiseOne, promiseTwo, and promiseThree together.
+const addPromiseResults = (promiseOne, promiseTwo, promiseThree) => {
+  return Promise.all([promiseOne, promiseTwo, promiseThree]).then((results) => {
+    let total = results.reduce((a, b) => a + b);
+    return total;
+  });
 };
 
 // DO NOT edit the code below, since these functions are being exported and used in the promsies.test.js file
 module.exports = {
   tellEveryoneQuestion,
   promiseStateQuestion,
+  addTwo,
+  keepAddingByTwo,
   rememberName,
   sayHello,
   delayedGreeting,
+  promiseAllQuestion,
+  promiseOne,
+  promiseTwo,
+  promiseThree,
+  addPromiseResults,
 };
