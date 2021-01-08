@@ -6,7 +6,7 @@ Learn promises by interpreting existing code, and writing your own promises. The
 
 1. Advanced Promises/ Batch Promise methods set
 
-- batch promise methods (.allSettled .any .race)
+- batch promise methods (.allSettled, .any, .race)
 - range of different promise objects built out, and then different combinations of them in arrays --> goal is to establish which of the batch methods need to be used on each array to get the target output
 
 2. Real World Front End Examples with Fetch / Axios
@@ -15,6 +15,9 @@ Learn promises by interpreting existing code, and writing your own promises. The
 - free/no auth APIS: star wars api, free cat-facts api
 
 3. Async Await
+
+- refactor an existing promise to use asnyc await
+- write a fn that uses async await from scratch
 
 ## Promises Introduction
 
